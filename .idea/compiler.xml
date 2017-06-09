@@ -8,12 +8,14 @@
         <outputRelativeToContentRoot value="true" />
         <module name="mavenEJB" />
         <module name="mavenWeb" />
+        <module name="mHib" />
         <module name="mWeb" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="mavenEJB" target="1.5" />
       <module name="mavenWeb" target="1.5" />
+      <module name="mHib" target="1.5" />
       <module name="mWeb" target="1.5" />
     </bytecodeTargetLevel>
   </component>
