@@ -3,6 +3,8 @@
   <component name="FrameworkDetectionExcludesConfiguration">
     <file type="web" url="file://$PROJECT_DIR$/mavenEJB" />
     <file type="web" url="file://$PROJECT_DIR$/mHib" />
+    <file type="web" url="file://$PROJECT_DIR$/mRestClient" />
+    <file type="web" url="file://$PROJECT_DIR$/mRestServer" />
     <file type="web" url="file://$PROJECT_DIR$/mWeb" />
   </component>
   <component name="MavenProjectsManager">
@@ -12,6 +14,8 @@
         <option value="$PROJECT_DIR$/mavenWeb/pom.xml" />
         <option value="$PROJECT_DIR$/mWeb/pom.xml" />
         <option value="$PROJECT_DIR$/mHib/pom.xml" />
+        <option value="$PROJECT_DIR$/mRestServer/pom.xml" />
+        <option value="$PROJECT_DIR$/mRestClient/pom.xml" />
       </list>
     </option>
   </component>

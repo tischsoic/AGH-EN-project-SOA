@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AGH-SOA-project-maven-tests.iml" filepath="$PROJECT_DIR$/.idea/AGH-SOA-project-maven-tests.iml" />
       <module fileurl="file://$PROJECT_DIR$/mHib/mHib.iml" filepath="$PROJECT_DIR$/mHib/mHib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mRestClient/mRestClient.iml" filepath="$PROJECT_DIR$/mRestClient/mRestClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mRestServer/mRestServer.iml" filepath="$PROJECT_DIR$/mRestServer/mRestServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/mWeb/mWeb.iml" filepath="$PROJECT_DIR$/mWeb/mWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/mavenEJB/mavenEJB.iml" filepath="$PROJECT_DIR$/mavenEJB/mavenEJB.iml" />
       <module fileurl="file://$PROJECT_DIR$/mavenWeb/mavenWeb.iml" filepath="$PROJECT_DIR$/mavenWeb/mavenWeb.iml" />

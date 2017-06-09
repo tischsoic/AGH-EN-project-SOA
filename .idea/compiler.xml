@@ -9,6 +9,8 @@
         <module name="mavenEJB" />
         <module name="mavenWeb" />
         <module name="mHib" />
+        <module name="mRestClient" />
+        <module name="mRestServer" />
         <module name="mWeb" />
       </profile>
     </annotationProcessing>
@@ -16,6 +18,8 @@
       <module name="mavenEJB" target="1.5" />
       <module name="mavenWeb" target="1.5" />
       <module name="mHib" target="1.5" />
+      <module name="mRestClient" target="1.5" />
+      <module name="mRestServer" target="1.5" />
       <module name="mWeb" target="1.5" />
     </bytecodeTargetLevel>
   </component>
