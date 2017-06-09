@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/AGH-SOA-project-maven-tests.iml" filepath="$PROJECT_DIR$/.idea/AGH-SOA-project-maven-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mWeb/mWeb.iml" filepath="$PROJECT_DIR$/mWeb/mWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mavenEJB/mavenEJB.iml" filepath="$PROJECT_DIR$/mavenEJB/mavenEJB.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mavenWeb/mavenWeb.iml" filepath="$PROJECT_DIR$/mavenWeb/mavenWeb.iml" />
+    </modules>
+  </component>
+</project>
