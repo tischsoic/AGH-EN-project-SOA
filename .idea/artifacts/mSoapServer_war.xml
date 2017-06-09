@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="mSoapServer:war">
+    <output-path>$PROJECT_DIR$/mSoapServer/target</output-path>
+    <root id="archive" name="mSoapServer.war">
+      <element id="artifact" artifact-name="mSoapServer:war exploded" />
+    </root>
+  </artifact>
+</component>

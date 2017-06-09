@@ -5,6 +5,8 @@
     <file type="web" url="file://$PROJECT_DIR$/mHib" />
     <file type="web" url="file://$PROJECT_DIR$/mRestClient" />
     <file type="web" url="file://$PROJECT_DIR$/mRestServer" />
+    <file type="web" url="file://$PROJECT_DIR$/mSoapClient" />
+    <file type="web" url="file://$PROJECT_DIR$/mSoapServer" />
     <file type="web" url="file://$PROJECT_DIR$/mWeb" />
   </component>
   <component name="MavenProjectsManager">
@@ -16,6 +18,8 @@
         <option value="$PROJECT_DIR$/mHib/pom.xml" />
         <option value="$PROJECT_DIR$/mRestServer/pom.xml" />
         <option value="$PROJECT_DIR$/mRestClient/pom.xml" />
+        <option value="$PROJECT_DIR$/mSoapServer/pom.xml" />
+        <option value="$PROJECT_DIR$/mSoapClient/pom.xml" />
       </list>
     </option>
   </component>

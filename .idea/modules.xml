@@ -6,6 +6,8 @@
       <module fileurl="file://$PROJECT_DIR$/mHib/mHib.iml" filepath="$PROJECT_DIR$/mHib/mHib.iml" />
       <module fileurl="file://$PROJECT_DIR$/mRestClient/mRestClient.iml" filepath="$PROJECT_DIR$/mRestClient/mRestClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/mRestServer/mRestServer.iml" filepath="$PROJECT_DIR$/mRestServer/mRestServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mSoapClient/mSoapClient.iml" filepath="$PROJECT_DIR$/mSoapClient/mSoapClient.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mSoapServer/mSoapServer.iml" filepath="$PROJECT_DIR$/mSoapServer/mSoapServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/mWeb/mWeb.iml" filepath="$PROJECT_DIR$/mWeb/mWeb.iml" />
       <module fileurl="file://$PROJECT_DIR$/mavenEJB/mavenEJB.iml" filepath="$PROJECT_DIR$/mavenEJB/mavenEJB.iml" />
       <module fileurl="file://$PROJECT_DIR$/mavenWeb/mavenWeb.iml" filepath="$PROJECT_DIR$/mavenWeb/mavenWeb.iml" />

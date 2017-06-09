@@ -11,6 +11,9 @@
         <module name="mHib" />
         <module name="mRestClient" />
         <module name="mRestServer" />
+        <module name="mRestServer (1)" />
+        <module name="mSoapClient" />
+        <module name="mSoapServer" />
         <module name="mWeb" />
       </profile>
     </annotationProcessing>
@@ -20,6 +23,9 @@
       <module name="mHib" target="1.5" />
       <module name="mRestClient" target="1.5" />
       <module name="mRestServer" target="1.5" />
+      <module name="mRestServer (1)" target="1.5" />
+      <module name="mSoapClient" target="1.5" />
+      <module name="mSoapServer" target="1.5" />
       <module name="mWeb" target="1.5" />
     </bytecodeTargetLevel>
   </component>
