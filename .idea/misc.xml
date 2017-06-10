@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/entityModels" />
     <file type="web" url="file://$PROJECT_DIR$/mavenEJB" />
     <file type="web" url="file://$PROJECT_DIR$/mHib" />
     <file type="web" url="file://$PROJECT_DIR$/mRestClient" />
@@ -20,6 +21,7 @@
         <option value="$PROJECT_DIR$/mRestClient/pom.xml" />
         <option value="$PROJECT_DIR$/mSoapServer/pom.xml" />
         <option value="$PROJECT_DIR$/mSoapClient/pom.xml" />
+        <option value="$PROJECT_DIR$/entityModels/pom.xml" />
       </list>
     </option>
   </component>

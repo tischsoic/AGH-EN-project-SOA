@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="entityModels:war">
+    <output-path>$PROJECT_DIR$/entityModels/target</output-path>
+    <root id="archive" name="entityModels-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="entityModels:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="entityModels" />
         <module name="mavenEJB" />
         <module name="mavenWeb" />
         <module name="mHib" />
@@ -18,6 +19,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="entityModels" target="1.5" />
       <module name="mavenEJB" target="1.5" />
       <module name="mavenWeb" target="1.5" />
       <module name="mHib" target="1.5" />

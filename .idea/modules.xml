@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/AGH-SOA-project-maven-tests.iml" filepath="$PROJECT_DIR$/.idea/AGH-SOA-project-maven-tests.iml" />
+      <module fileurl="file://$PROJECT_DIR$/entityModels/entityModels.iml" filepath="$PROJECT_DIR$/entityModels/entityModels.iml" />
       <module fileurl="file://$PROJECT_DIR$/mHib/mHib.iml" filepath="$PROJECT_DIR$/mHib/mHib.iml" />
       <module fileurl="file://$PROJECT_DIR$/mRestClient/mRestClient.iml" filepath="$PROJECT_DIR$/mRestClient/mRestClient.iml" />
       <module fileurl="file://$PROJECT_DIR$/mRestServer/mRestServer.iml" filepath="$PROJECT_DIR$/mRestServer/mRestServer.iml" />
