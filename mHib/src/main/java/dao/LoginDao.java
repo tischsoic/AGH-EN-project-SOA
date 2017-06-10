@@ -12,7 +12,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 public class LoginDao {
-    public static LoginValidation validate(String username, String password) throws NoSuchAlgorithmException {
+    public static LoginValidation validate(String username, String password) {
         LoginValidation ret = new LoginValidation();
         ret.setSuccess(false);
         ret.setAdmin(false);
@@ -27,7 +27,14 @@ public class LoginDao {
         System.out.println(q2.toString());
         List<User> us = q2.getResultList();
         System.out.println(us);
-        String hashedPassword = MD5HashingUtils.hash(password);
+        String hashedPassword = "";
+        try {
+            hashedPassword = MD5HashingUtils.hash(password);
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            return ret;
+        }
+
         Query query = em.createQuery("FROM User where username = :username and password = :password");
         List<User> users = query.setParameter("username", username)
                 .setParameter("password", hashedPassword).getResultList();
@@ -36,6 +43,7 @@ public class LoginDao {
             User user = users.get(0);
             ret.setSuccess(true);
             ret.setAdmin(user.isAdmin());
+            ret.setUserId(user.getUser_id());
             System.out.println(user.getZones().toString());
         }
 

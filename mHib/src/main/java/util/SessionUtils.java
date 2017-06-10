@@ -1,5 +1,7 @@
 package util;
 
+import models.Book;
+
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -20,9 +22,15 @@ public class SessionUtils {
 		return session.getAttribute("username").toString();
 	}
 
-	public static String getUserId() {
+	public static Long getUserId() {
 		HttpSession session = getSession();
 
-		return session != null ? (String) session.getAttribute("userid") : null;
+		return session != null ? (Long) session.getAttribute("userId") : null;
+	}
+
+	public static Boolean getIsAdmin() {
+		HttpSession session = getSession();
+
+		return session != null ? (Boolean) session.getAttribute("isAdmin") : false;
 	}
 }

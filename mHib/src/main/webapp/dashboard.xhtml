@@ -8,6 +8,9 @@
 <f:view>
     <h:outputLabel value="Hello, world"/>
     <p>Welcome #{login.username}</p>
+    <ui:repeat value="#{dashboard.ticketsToDisplay}" var="ticket">
+        #{ticket.toString()}
+    </ui:repeat>
     <h:form>
         <h:commandLink action="change_password" value="Change password" />
         <h:commandLink action="#{login.logout}" value="Logout" />

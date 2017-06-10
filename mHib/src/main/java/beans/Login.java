@@ -19,12 +19,15 @@ public class Login {
     private String password;
     private String msq;
 
-    public String validateLoginData() throws NoSuchAlgorithmException {
+    public String validateLoginData() {
+        System.out.println("asdfasdfasdfasdf !!!!!!!!!!!!!!! d1");
         LoginValidation validation = LoginDao.validate(username, password);
 
         if(validation.isSuccess()) {
             HttpSession session = SessionUtils.getSession();
             session.setAttribute("username", username);
+            session.setAttribute("userId", validation.getUserId());
+            session.setAttribute("isAdmin", (Boolean)validation.isAdmin());
 
             return "dashboard";
         } else {
