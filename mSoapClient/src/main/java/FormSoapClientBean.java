@@ -1,4 +1,8 @@
-import placeservice.HelloWorld;
+//import endpoint.placeservice.HelloWorld;
+//import endpoint.placeservice.HelloWorldService;
+
+import endpoint.placeservice.HelloWorld;
+import endpoint.placeservice.HelloWorldService;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -17,11 +21,11 @@ import java.util.List;
 
 @Stateless
 @RequestScoped
-@Named("formbean")
-public class FormBean {
+@Named("formsoapclient")
+public class FormSoapClientBean {
 
-    @WebServiceRef(wsdlLocation = "http://localhost:8080/mSoapServer/HelloWorld?wsdl")
-    private HelloWorld service;
+//    @WebServiceRef(wsdlLocation = "http://localhost:8080/mSoapServer/HelloWorld?wsdl")
+//    private HelloWorldService service;
 
     public String getMyMessage() {
         return myMessage;
@@ -54,19 +58,14 @@ public class FormBean {
         client.close();
     }
 
-    public FormBean() {
+    public FormSoapClientBean() {
     }
 
 
     public void sendTicket() {
-        service.getMsg();
-        List<Book> books = client.target("http://localhost:8080/mRestServer/helloworld")
-                .request(MediaType.APPLICATION_JSON)
-                .get(new GenericType<List<Book>>() {
-
-                });
-
-        FacesMessage facesMessage = new FacesMessage("Book title: " + books.get(0).getTitle());
+        HelloWorld port = new HelloWorldService().getHelloWorldPort();
+//
+        FacesMessage facesMessage = new FacesMessage("Book title: " + port.getMsg("Moj arg"));
         FacesContext.getCurrentInstance().addMessage(null, facesMessage);
     }
 

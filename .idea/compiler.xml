@@ -25,7 +25,7 @@
       <module name="mRestServer" target="1.5" />
       <module name="mRestServer (1)" target="1.5" />
       <module name="mSoapClient" target="1.5" />
-      <module name="mSoapServer" target="1.5" />
+      <module name="mSoapServer" target="1.8" />
       <module name="mWeb" target="1.5" />
     </bytecodeTargetLevel>
   </component>
