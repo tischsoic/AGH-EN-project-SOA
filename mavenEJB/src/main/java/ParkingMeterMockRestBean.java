@@ -27,7 +27,7 @@ public class ParkingMeterMockRestBean implements ParkingMeterMockRest {
         parkingMeter.setParking_meter_id(t.parking_meter_id);
 
         Ticket ticket = new Ticket();
-        ticket.setTic_start(new Date());
+        ticket.setTic_start(t.tic_start);
         ticket.setTic_end(t.tic_end);
         ticket.setTic_duration(t.duration);
         ticket.setParkingMeter(parkingMeter);

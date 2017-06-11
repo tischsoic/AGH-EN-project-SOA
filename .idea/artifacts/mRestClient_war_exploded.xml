@@ -19,6 +19,9 @@
           <element id="library" level="project" name="Maven: javax.xml:jaxrpc-api:1.1" />
           <element id="library" level="project" name="Maven: javax.inject:javax.inject:1" />
           <element id="library" level="project" name="Maven: org.jboss.resteasy:jaxrs-api:3.0.10.Final" />
+          <element id="archive" name="entityModels-1.0-SNAPSHOT.jar">
+            <element id="module-output" name="entityModels" />
+          </element>
         </element>
       </element>
       <element id="directory" name="META-INF">

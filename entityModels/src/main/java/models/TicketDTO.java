@@ -1,7 +1,7 @@
 package models;
 
 import java.io.Serializable;
-import java.sql.Date;
+import java.util.Date;
 
 public class TicketDTO implements Serializable {
     public Long ticket_id;

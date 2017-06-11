@@ -78,5 +78,6 @@
     <orderEntry type="library" name="Maven: javax.xml:jaxrpc-api:1.1" level="project" />
     <orderEntry type="library" name="Maven: javax.inject:javax.inject:1" level="project" />
     <orderEntry type="library" name="Maven: org.jboss.resteasy:jaxrs-api:3.0.10.Final" level="project" />
+    <orderEntry type="module" module-name="entityModels" />
   </component>
 </module>

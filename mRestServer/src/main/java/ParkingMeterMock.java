@@ -20,10 +20,10 @@ public class ParkingMeterMock {
     @Path("/ticket")
     @Consumes(MediaType.APPLICATION_JSON)
     public Response postTicket(TicketDTO ticketDTO) {
-        boolean success = parkingMeterMockRest.insertTicket(ticketDTO);
+        Boolean success = parkingMeterMockRest.insertTicket(ticketDTO);
 
         JsonObject json = Json.createObjectBuilder()
-                .add("success", success).build();
+                .add("success", success.toString()).build();
 
         return Response.status(200).entity(json).build();
     }

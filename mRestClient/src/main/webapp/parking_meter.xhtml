@@ -11,10 +11,17 @@
         <h3>Add new ticket</h3>
         <h:outputLabel for="meterId" value="Parking meter ID: " />
          <h:inputText id="meterId" value="#{formbean.meterId}">
-            <f:validateLength minimum="3" />
-            <f:ajax event="keyup" render="messageTitle" />
         </h:inputText>
-        <h:commandButton value="get books" action="#{formbean.sendTicket}" />
+        <br/>
+        <h:outputLabel for="startId" value="Time: " />
+         <h:inputText id="startId" value="#{formbean.tic_start}">
+        </h:inputText>
+        <br/>
+        <h:outputLabel for="durationId" value="Duration: " />
+         <h:inputText id="durationId" value="#{formbean.tic_duration}">
+        </h:inputText>
+        <br/>
+        <h:commandButton value="Send ticket" action="#{formbean.sendTicket}" />
     </h:form>
     <h:messages infoStyle="color: blue" showSummary="true" />
 </f:view>

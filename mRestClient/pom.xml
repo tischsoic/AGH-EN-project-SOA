@@ -105,6 +105,11 @@
         <artifactId>jaxrs-api</artifactId>
         <version>3.0.10.Final</version>
     </dependency>
+      <dependency>
+          <groupId>pl.symfiz</groupId>
+          <artifactId>entityModels</artifactId>
+          <version>1.0-SNAPSHOT</version>
+      </dependency>
   </dependencies>
   <build>
     <finalName>mRestClient</finalName>
