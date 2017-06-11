@@ -5,7 +5,14 @@
     <persistence-unit name="entityManager">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <!-- Annotated entity classes -->
-        <class>placeservice.Book</class>
+        <class>models.AsdfAsdfAsdf</class>
+        <class>models.User</class>
+        <class>models.Zone</class>
+        <class>models.Book</class>
+        <class>models.ParkingMeter</class>
+        <class>models.Occupancy</class>
+        <class>models.ParkingSpace</class>
+        <class>models.Ticket</class>
         <properties>
 
             <property name="hibernate.connection.url" value="jdbc:postgresql://localhost:5432/soa_1" />

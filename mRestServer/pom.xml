@@ -104,6 +104,17 @@
             <artifactId>jaxrs-api</artifactId>
             <version>3.0.10.Final</version>
         </dependency>
+        <dependency>
+            <groupId>pl.symfiz</groupId>
+            <artifactId>mavenEJB</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>pl.symfiz</groupId>
+            <artifactId>entityModels</artifactId>
+            <version>1.0-SNAPSHOT</version>
+            <!--<scope>provided</scope>-->
+        </dependency>
     </dependencies>
     <build>
         <finalName>mRestServer</finalName>
