@@ -1,5 +1,5 @@
 
-package endpoint.placeservice;
+package endpoint;
 
 import java.util.List;
 import javax.jws.WebMethod;
@@ -17,24 +17,24 @@ import javax.xml.ws.ResponseWrapper;
  * Generated source version: 2.2
  * 
  */
-@WebService(name = "HelloWorld", targetNamespace = "http://placeservice/")
+@WebService(name = "ExternalSystem", targetNamespace = "http://placeservice/")
 @XmlSeeAlso({
     ObjectFactory.class
 })
-public interface HelloWorld {
+public interface ExternalSystem {
 
 
     /**
      * 
      * @param arg0
      * @return
-     *     returns java.util.List<endpoint.placeservice.Book>
+     *     returns java.util.List<TicketDTO>
      */
     @WebMethod
     @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "getMsg", targetNamespace = "http://placeservice/", className = "endpoint.placeservice.GetMsg")
-    @ResponseWrapper(localName = "getMsgResponse", targetNamespace = "http://placeservice/", className = "endpoint.placeservice.GetMsgResponse")
-    public List<Book> getMsg(
+    @RequestWrapper(localName = "getMsg", targetNamespace = "http://placeservice/", className = "GetMsg")
+    @ResponseWrapper(localName = "getMsgResponse", targetNamespace = "http://placeservice/", className = "GetMsgResponse")
+    public List<TicketDTO> getMsg(
         @WebParam(name = "arg0", targetNamespace = "")
         String arg0);
 

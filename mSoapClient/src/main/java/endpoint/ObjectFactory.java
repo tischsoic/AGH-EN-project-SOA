@@ -1,5 +1,5 @@
 
-package endpoint.placeservice;
+package endpoint;
 
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.annotation.XmlElementDecl;
@@ -10,7 +10,7 @@ import javax.xml.namespace.QName;
 /**
  * This object contains factory methods for each 
  * Java content interface and Java element interface 
- * generated in the endpoint.placeservice package. 
+ * generated in the endpoint package. 
  * <p>An ObjectFactory allows you to programatically 
  * construct new instances of the Java representation 
  * for XML content. The Java representation of XML 
@@ -28,7 +28,7 @@ public class ObjectFactory {
     private final static QName _GetMsg_QNAME = new QName("http://placeservice/", "getMsg");
 
     /**
-     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: endpoint.placeservice
+     * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: endpoint
      * 
      */
     public ObjectFactory() {
@@ -51,11 +51,11 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link Book }
+     * Create an instance of {@link TicketDTO }
      * 
      */
-    public Book createBook() {
-        return new Book();
+    public TicketDTO createTicketDTO() {
+        return new TicketDTO();
     }
 
     /**

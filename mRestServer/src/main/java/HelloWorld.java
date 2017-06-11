@@ -1,5 +1,5 @@
-import models.Ticket;
 import models.TicketDTO;
+import system.ParkingMeterMockRest;
 
 import javax.ejb.EJB;
 //import javax.persistence.EntityManager;

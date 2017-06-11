@@ -1,4 +1,5 @@
 import models.*;
+import system.ExternalSystemRestSoap;
 
 import javax.ejb.EJB;
 import javax.json.*;

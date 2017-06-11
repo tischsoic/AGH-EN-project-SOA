@@ -1,8 +1,9 @@
 //import endpoint.placeservice.HelloWorld;
 //import endpoint.placeservice.HelloWorldService;
 
-import endpoint.placeservice.HelloWorld;
-import endpoint.placeservice.HelloWorldService;
+
+import endpoint.ExternalSystem;
+import endpoint.ExternalSystemService;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
@@ -13,10 +14,6 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
-import javax.ws.rs.core.GenericType;
-import javax.ws.rs.core.MediaType;
-import javax.xml.ws.WebServiceRef;
-import java.util.List;
 
 
 @Stateless
@@ -63,9 +60,9 @@ public class FormSoapClientBean {
 
 
     public void sendTicket() {
-        HelloWorld port = new HelloWorldService().getHelloWorldPort();
-//
-        FacesMessage facesMessage = new FacesMessage("Book title: " + port.getMsg("Moj arg"));
+        ExternalSystem port = new ExternalSystemService().getExternalSystemPort();
+
+        FacesMessage facesMessage = new FacesMessage("Book title: " + port.getMsg("Moj arg").get(0).getTicStart().toString());
         FacesContext.getCurrentInstance().addMessage(null, facesMessage);
     }
 

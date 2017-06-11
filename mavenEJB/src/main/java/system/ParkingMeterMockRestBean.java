@@ -1,3 +1,5 @@
+package system;
+
 import models.ParkingMeter;
 import models.Ticket;
 import models.TicketDTO;
@@ -10,7 +12,6 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.Date;
 
 @Stateless
 @Remote(ParkingMeterMockRest.class)
@@ -24,12 +25,12 @@ public class ParkingMeterMockRestBean implements ParkingMeterMockRest {
         session.beginTransaction();
 
         ParkingMeter parkingMeter = new ParkingMeter();
-        parkingMeter.setParking_meter_id(t.parking_meter_id);
+        parkingMeter.setParking_meter_id(t.getParking_meter_id());
 
         Ticket ticket = new Ticket();
-        ticket.setTic_start(t.tic_start);
-        ticket.setTic_end(t.tic_end);
-        ticket.setTic_duration(t.duration);
+        ticket.setTic_start(t.getTic_start());
+        ticket.setTic_end(t.getTic_end());
+        ticket.setTic_duration(t.getDuration());
         ticket.setParkingMeter(parkingMeter);
 
         session.save(ticket);

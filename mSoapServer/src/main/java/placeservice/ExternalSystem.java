@@ -1,5 +1,10 @@
 package placeservice;
 
+import models.Ticket;
+import models.TicketDTO;
+import system.ExternalSystemRestSoap;
+
+import javax.ejb.EJB;
 import javax.jws.WebMethod;
 import javax.jws.WebService;
 import javax.persistence.EntityManager;
@@ -8,32 +13,33 @@ import javax.persistence.Persistence;
 import javax.persistence.Query;
 import javax.ws.rs.core.Context;
 import javax.ws.rs.core.UriInfo;
+import java.util.LinkedList;
 import java.util.List;
 
 @WebService
 public class ExternalSystem {
     @Context
     private UriInfo context;
-    private EntityManagerFactory emf;
-    private EntityManager em;
+    @EJB
+    private ExternalSystemRestSoap externalSystemRestSoap;
 
     public ExternalSystem() {
 
     }
 
     @WebMethod
-    public List<Book> getMsg(String name) {
-        emf = Persistence.createEntityManagerFactory( "entityManager" );
-        em = emf.createEntityManager();
-
-        String hql = "from Book";
-        Query query = em.createQuery(hql);
-        List<Book> books = query.getResultList();
-//        return query.getResultList();
-        System.out.println("" + books.size());
-        System.out.println(books.toString());
-        em.close();
-        emf.close();
-        return books;
+    public List<TicketDTO> getMsg(String name) {
+        List<Ticket> ts = externalSystemRestSoap.getAllTickets();
+        List<TicketDTO> dto = new LinkedList<>();
+        Ticket fst = ts.get(0);
+        TicketDTO td = new TicketDTO();
+        td.setDuration(fst.getTic_duration());
+        td.setTic_end(fst.getTic_end());
+        td.setTic_start(fst.getTic_start());
+        dto.add(td);
+        System.out.println("!!!!!!!!!!!!! sending ticketDTO by SOAP!!");
+        List<String> stl = new LinkedList<>();
+        stl.add("asdf");
+        return dto;
     }
 }

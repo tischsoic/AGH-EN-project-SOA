@@ -4,11 +4,11 @@ import java.io.Serializable;
 import java.util.Date;
 
 public class TicketDTO implements Serializable {
-    public Long ticket_id;
-    public Date tic_start;
-    public Date tic_end;
-    public Long parking_meter_id;
-    public Integer duration;
+    private Long ticket_id;
+    private Date tic_start;
+    private Date tic_end;
+    private Long parking_meter_id;
+    private Integer duration;
 
     public Long getTicket_id() {
         return ticket_id;
