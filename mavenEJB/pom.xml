@@ -120,6 +120,8 @@
             <artifactId>jboss-ejb-api_3.1_spec</artifactId>
             <version>1.0.0.Final</version>
         </dependency>
+
+
     </dependencies>
     <packaging>war</packaging>
 

@@ -1,4 +1,3 @@
-import models.ParkingMeter;
 import models.Ticket;
 import models.TicketDTO;
 
@@ -29,20 +28,25 @@ public class HelloWorld {
     @GET
     @Produces({MediaType.APPLICATION_JSON})
     public List<TicketDTO> getMsg() {
-        List<Ticket> tickets = parkingMeter.getAllTickets();
-        List<TicketDTO> ticketDTOS = new LinkedList<TicketDTO>();
+        TicketDTO t = new TicketDTO();
+        LinkedList<TicketDTO> l = new LinkedList<TicketDTO>();
+        l.add(t);
 
-        for (Ticket t : tickets) {
-            TicketDTO td = new TicketDTO();
-            td.Parking_meter_id = t.getParkingMeter() != null ? t.getParkingMeter().getParking_meter_id() : null;
-            td.Tic_end = t.getTic_end();
-            td.Tic_start = t.getTic_start();
-            td.Ticket_id = t.getTicket_id();
-
-            ticketDTOS.add(td);
-        }
-
-        return ticketDTOS;
+        return l;
+//        List<Ticket> tickets = parkingMeter.getAllTickets();
+//        List<TicketDTO> ticketDTOS = new LinkedList<TicketDTO>();
+//
+//        for (Ticket t : tickets) {
+//            TicketDTO td = new TicketDTO();
+//            td.parking_meter_id = t.getParkingMeter() != null ? t.getParkingMeter().getParking_meter_id() : null;
+//            td.tic_end = t.getTic_end();
+//            td.tic_start = t.getTic_start();
+//            td.ticket_id = t.getTicket_id();
+//
+//            ticketDTOS.add(td);
+//        }
+//
+//        return ticketDTOS;
 
 //        emf = Persistence.createEntityManagerFactory( "entityManager" );
 //        em = emf.createEntityManager();

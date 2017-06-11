@@ -2,17 +2,21 @@ package models;
 
 import javax.persistence.*;
 import java.io.Serializable;
-import java.sql.Date;
-import java.util.List;
+import java.util.Date;
 
 @Entity
 public class Ticket implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long ticket_id;
 
+    @Temporal(TemporalType.TIMESTAMP)
     private Date tic_start;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Date tic_end;
+
+    private Integer tic_duration;
 
     @ManyToOne
     @JoinColumn(name = "parking_meter_id")
@@ -48,5 +52,13 @@ public class Ticket implements Serializable {
 
     public void setParkingMeter(ParkingMeter parkingMeter) {
         this.parkingMeter = parkingMeter;
+    }
+
+    public Integer getTic_duration() {
+        return tic_duration;
+    }
+
+    public void setTic_duration(Integer duration) {
+        this.tic_duration = duration;
     }
 }

@@ -80,5 +80,6 @@
     <orderEntry type="library" name="Maven: org.jboss.resteasy:jaxrs-api:3.0.10.Final" level="project" />
     <orderEntry type="module" module-name="mavenEJB" />
     <orderEntry type="module" module-name="entityModels" />
+    <orderEntry type="library" name="Maven: javax.json:javax.json-api:1.1" level="project" />
   </component>
 </module>
