@@ -8,7 +8,7 @@ import java.util.List;
 @Table(name="parking_space")
 public class ParkingSpace implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long parking_space_id;
 
     @ManyToOne

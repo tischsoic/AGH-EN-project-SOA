@@ -8,12 +8,13 @@
 <f:view>
     <h:outputLabel value="Hello, world"/>
     <h:form id="addTicket">
-        <h3>Add new ticket</h3>
-        <h:outputLabel for="meterId" value="Parking meter ID: " />
-         <h:inputText id="meterId" value="#{formsoapclient.meterId}">
-            <f:validateLength minimum="3" />
-            <f:ajax event="keyup" render="messageTitle" />
-        </h:inputText>
+        <h3>Add new occupancy</h3>
+        <h:outputLabel for="psId" value="Parking space id ID: " />
+         <h:inputText id="psId" value="#{formsoapclient.parkingSpaceId}"/><br/>
+        <h:outputLabel for="pstart" value="Parking start (format e.g. 2017-06-11 19:30): " />
+         <h:inputText id="pstart" value="#{formsoapclient.parkingStart}"/><br/>
+        <h:outputLabel for="pend" value="Parking end: " />
+         <h:inputText id="pend" value="#{formsoapclient.parkingEnd}"/><br/>
         <h:commandButton value="get books" action="#{formsoapclient.sendTicket}" />
     </h:form>
     <h:messages infoStyle="color: blue" showSummary="true" />

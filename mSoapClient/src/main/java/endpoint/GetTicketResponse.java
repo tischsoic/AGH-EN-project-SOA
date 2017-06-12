@@ -3,20 +3,21 @@ package endpoint;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for getMsg complex type.
+ * <p>Java class for getTicketResponse complex type.
  * 
  * <p>The following schema fragment specifies the expected content contained within this class.
  * 
  * <pre>
- * &lt;complexType name="getMsg">
+ * &lt;complexType name="getTicketResponse">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="arg0" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="return" type="{http://placeservice/}ticketDTO" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -26,35 +27,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "getMsg", propOrder = {
-    "arg0"
+@XmlType(name = "getTicketResponse", propOrder = {
+    "_return"
 })
-public class GetMsg {
+public class GetTicketResponse {
 
-    protected String arg0;
+    @XmlElement(name = "return")
+    protected TicketDTO _return;
 
     /**
-     * Gets the value of the arg0 property.
+     * Gets the value of the return property.
      * 
      * @return
      *     possible object is
-     *     {@link String }
+     *     {@link TicketDTO }
      *     
      */
-    public String getArg0() {
-        return arg0;
+    public TicketDTO getReturn() {
+        return _return;
     }
 
     /**
-     * Sets the value of the arg0 property.
+     * Sets the value of the return property.
      * 
      * @param value
      *     allowed object is
-     *     {@link String }
+     *     {@link TicketDTO }
      *     
      */
-    public void setArg0(String value) {
-        this.arg0 = value;
+    public void setReturn(TicketDTO value) {
+        this._return = value;
     }
 
 }
