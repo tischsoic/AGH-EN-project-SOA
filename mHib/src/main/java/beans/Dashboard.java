@@ -5,6 +5,7 @@ import models.Ticket;
 import util.SessionUtils;
 
 import javax.annotation.PostConstruct;
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import java.util.List;
@@ -13,10 +14,12 @@ import java.util.List;
 @RequestScoped
 public class Dashboard {
     private List<Ticket> ticketsToDisplay;
+    @EJB
+    DashboardEJB dashboardEJB;
 
     @PostConstruct
     public void init() {
-        ticketsToDisplay = DashboardDAO.getTickets(SessionUtils.getUserId(), SessionUtils.getIsAdmin());
+        ticketsToDisplay = dashboardEJB.getTickets();
     }
 
     public List<Ticket> getTicketsToDisplay() {

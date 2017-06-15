@@ -3,10 +3,9 @@ package dao;
 import models.User;
 import util.MD5HashingUtils;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
+import javax.persistence.*;
+import javax.transaction.TransactionManager;
+import javax.transaction.UserTransaction;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
@@ -19,6 +18,10 @@ public class ChangePasswordDAO {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("entityManager");
         EntityManager em = emf.createEntityManager();
 
+        EntityTransaction entityTransaction = em.getTransaction();
+
+        entityTransaction.begin();
+
         System.out.println("new password: " + newPassword + " userId: " + userId);
         Query query = em.createQuery("update User set password = :newPassword where user_id = :userId");
         query.setParameter("userId", userId);
@@ -30,6 +33,8 @@ public class ChangePasswordDAO {
         }
 
         int rowsAffected = query.executeUpdate();
+
+        entityTransaction.commit();
 
         em.close();
         emf.close();
