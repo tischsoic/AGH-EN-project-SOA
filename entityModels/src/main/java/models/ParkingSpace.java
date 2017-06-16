@@ -15,6 +15,10 @@ public class ParkingSpace implements Serializable {
     @JoinColumn(name = "zone_id")
     private Zone zone;
 
+    @OneToMany
+    @JoinColumn(name="parking_space_id")
+    private List<Occupancy> occupancies;
+
     public Long getParking_space_id() {
         return parking_space_id;
     }
@@ -29,5 +33,13 @@ public class ParkingSpace implements Serializable {
 
     public void setZone(Zone zone) {
         this.zone = zone;
+    }
+
+    public List<Occupancy> getOccupancies() {
+        return occupancies;
+    }
+
+    public void setOccupancies(List<Occupancy> occupancies) {
+        this.occupancies = occupancies;
     }
 }

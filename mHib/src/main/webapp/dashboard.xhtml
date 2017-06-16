@@ -8,11 +8,29 @@
 <f:view>
     <h:outputLabel value="Hello, world"/>
     <p>Welcome #{login.username}</p>
-    <ui:repeat value="#{dashboard.ticketsToDisplay}" var="ticket">
-        #{ticket.toString()}
-    </ui:repeat>
+    <h:outputLabel value="Number of tickets valid or epired within 10 min.:" />
+    <h:outputText value="#{dashboard.ticketsNumber}" escape="false" />
+    <br/>
+
+    <h:outputLabel value="Parking spaces:"/><br/>
+    <h:dataTable value="#{dashboard.parkingSpaces}" var="ps">
+        <h:column>
+            <f:facet name="header">Zone ID</f:facet>
+            #{ps[0]}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Parking space ID</f:facet>
+            #{ps[1]}
+        </h:column>
+        <h:column>
+            <f:facet name="header">Occupied</f:facet>
+            #{ps[2] > 0 ? "occupied" : "not occupied"}
+        </h:column>
+    </h:dataTable>
+
+    <br/>
     <h:form>
-        <h:commandLink action="change_password" value="Change password" />
+        <h:commandLink action="change_password" value="Change password" /><br/>
         <h:commandLink action="#{login.logout}" value="Logout" />
     </h:form>
 </f:view>

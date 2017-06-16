@@ -15,12 +15,12 @@ import java.util.List;
 @Remote(DashboardEJB.class)
 public class DashboardEJBBean implements DashboardEJB {
     @Lock(LockType.READ)
-    public List<Ticket> getTickets() {
-        return DashboardDAO.getTickets(SessionUtils.getUserId(), SessionUtils.getIsAdmin());
+    public Long getTicketsNumber() {
+        return DashboardDAO.getTicketsNumber(SessionUtils.getUserId(), SessionUtils.getIsAdmin());
     }
 
     @Lock(LockType.READ)
-    public List<ParkingSpace> getParkingSpaces() {
+    public List<Object[]> getParkingSpaces() {
         return DashboardDAO.getParkingSpaces(SessionUtils.getUserId(), SessionUtils.getIsAdmin());
     }
 

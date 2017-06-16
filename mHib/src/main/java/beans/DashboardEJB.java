@@ -6,7 +6,7 @@ import models.Ticket;
 import java.util.List;
 
 public interface DashboardEJB {
-    List<Ticket> getTickets();
+    Long getTicketsNumber();
 
-    List<ParkingSpace> getParkingSpaces();
+    List<Object[]> getParkingSpaces();
 }

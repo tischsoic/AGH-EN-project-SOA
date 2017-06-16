@@ -1,9 +1,5 @@
 package beans;
 
-import dao.DashboardDAO;
-import models.Ticket;
-import util.SessionUtils;
-
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -13,20 +9,32 @@ import java.util.List;
 @ManagedBean
 @RequestScoped
 public class Dashboard {
-    private List<Ticket> ticketsToDisplay;
+    private Long ticketsNumber;
+    private List<Object[]> parkingSpaces;
+
     @EJB
     DashboardEJB dashboardEJB;
 
     @PostConstruct
     public void init() {
-        ticketsToDisplay = dashboardEJB.getTickets();
+        ticketsNumber = dashboardEJB.getTicketsNumber();
+        parkingSpaces = dashboardEJB.getParkingSpaces();
     }
 
-    public List<Ticket> getTicketsToDisplay() {
-        return ticketsToDisplay;
+    public Long getTicketsNumber() {
+        return ticketsNumber;
     }
 
-    public void setTicketsToDisplay(List<Ticket> ticketsToDisplay) {
-        this.ticketsToDisplay = ticketsToDisplay;
+    public void setTicketsNumber(Long ticketsNumber) {
+        this.ticketsNumber = ticketsNumber;
     }
+
+    public List<Object[]> getParkingSpaces() {
+        return parkingSpaces;
+    }
+
+    public void setParkingSpaces(List<Object[]> parkingSpaces) {
+        this.parkingSpaces = parkingSpaces;
+    }
+
 }
