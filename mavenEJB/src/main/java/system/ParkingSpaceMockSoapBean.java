@@ -3,10 +3,8 @@ package system;
 import models.*;
 import org.hibernate.Session;
 
-import javax.ejb.Lock;
-import javax.ejb.LockType;
-import javax.ejb.Remote;
-import javax.ejb.Stateless;
+import javax.ejb.*;
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
@@ -14,9 +12,23 @@ import javax.persistence.Persistence;
 @Stateless
 @Remote(ParkingSpaceMockSoap.class)
 public class ParkingSpaceMockSoapBean implements ParkingSpaceMockSoap {
+
+    @EJB
+    Checker checker;
+
+//    @Asynchronous
+//    private void checkIfTicketBought() {
+//        try {
+//            Thread.sleep(5000);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
+//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!! ParkingSpaceMockSoapBean");
+//    }
+
     @Lock(LockType.WRITE)
     public boolean insertOccupancy(OccupancyDTO o) {
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory( "entityManager" );
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("entityManager");
         EntityManager em = emf.createEntityManager();
         Session session = em.unwrap(Session.class);
 
@@ -35,6 +47,8 @@ public class ParkingSpaceMockSoapBean implements ParkingSpaceMockSoap {
 
         em.close();
         emf.close();
+
+        checker.checkIfTicketBought();
 
         return true;
     }

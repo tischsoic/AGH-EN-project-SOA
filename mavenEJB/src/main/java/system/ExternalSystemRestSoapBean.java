@@ -63,7 +63,7 @@ public class ExternalSystemRestSoapBean implements ExternalSystemRestSoap {
 
     @Lock(LockType.READ)
     public Ticket getOneTicket(Long ticketId) {
-        return getOneFromTable("Ticket", "ticket_id", ticketId);
+        return getOneFromTableWithoutID("Ticket"); //, "ticket_id", ticketId);
     }
 
     private <T> List<T> getAllFromTable(String tableName) {
@@ -77,6 +77,20 @@ public class ExternalSystemRestSoapBean implements ExternalSystemRestSoap {
         emf.close();
 
         return all;
+    }
+
+    private <T> T getOneFromTableWithoutID(String tableName) {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("entityManager");
+        EntityManager em = emf.createEntityManager();
+
+        Query query = em.createQuery("from " + tableName);
+        query.setMaxResults(1);
+        List<T> all = query.getResultList();
+
+        em.close();
+        emf.close();
+
+        return all.size() == 1 ? all.get(0) : null;
     }
 
     private <T> T getOneFromTable(String tableName, String idColName, Long id) {
