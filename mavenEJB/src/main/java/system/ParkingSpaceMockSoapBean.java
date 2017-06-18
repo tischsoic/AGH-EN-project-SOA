@@ -48,7 +48,7 @@ public class ParkingSpaceMockSoapBean implements ParkingSpaceMockSoap {
         em.close();
         emf.close();
 
-        checker.checkIfTicketBought();
+        checker.checkIfTicketBought(occupancy);
 
         return true;
     }

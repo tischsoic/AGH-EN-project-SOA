@@ -39,12 +39,12 @@ public class FormBean {
 
     @PostConstruct
     private void init() {
-        client = ClientBuilder.newClient();
+
     }
 
     @PreDestroy
     private void clean() {
-        client.close();
+
     }
 
     public FormBean() {
@@ -70,9 +70,11 @@ public class FormBean {
         ticket.setTic_end(d_end);
         ticket.setParking_meter_id(meterId);
 
+        client = ClientBuilder.newClient();
         Response res = client.target("http://localhost:8080/mRestServer/pmm/ticket")
                 .request(MediaType.APPLICATION_JSON)
                 .post(Entity.entity(ticket, MediaType.APPLICATION_JSON));
+        client.close();
 
         FacesMessage facesMessage = new FacesMessage("Response: " + res.getStatus());
         System.out.println(facesMessage.toString());
