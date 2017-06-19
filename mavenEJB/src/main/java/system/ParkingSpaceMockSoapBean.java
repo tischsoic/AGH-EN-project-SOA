@@ -16,16 +16,6 @@ public class ParkingSpaceMockSoapBean implements ParkingSpaceMockSoap {
     @EJB
     Checker checker;
 
-//    @Asynchronous
-//    private void checkIfTicketBought() {
-//        try {
-//            Thread.sleep(5000);
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
-//        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!! ParkingSpaceMockSoapBean");
-//    }
-
     @Lock(LockType.WRITE)
     public boolean insertOccupancy(OccupancyDTO o) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("entityManager");

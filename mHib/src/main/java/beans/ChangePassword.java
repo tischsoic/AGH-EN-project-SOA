@@ -27,7 +27,6 @@ public class ChangePassword {
 
     @PostConstruct
     public void init() {
-        System.out.println("!!!!!!!! post construct ChangePAssword");
         usersToChangePassword = changePasswordEJB.getUsersToChangePassword();
 
         usersToChangePasswordsMenu = new LinkedHashMap<String, Object>();
@@ -37,7 +36,6 @@ public class ChangePassword {
     }
 
     public String changePassword() {
-        System.out.println("!!!!!!!!!! change password CHANgePassword managed bean");
         System.out.println("username: '" + username + "'");
         Iterator it = usersToChangePasswordsMenu.entrySet().iterator();
         User userToChangePassword = null;
@@ -51,7 +49,6 @@ public class ChangePassword {
             it.remove(); // avoids a ConcurrentModificationException
 
         }
-//        User userToChangePassword = (User) usersToChangePasswordsMenu.get(username);
         System.out.println("uTCP: " + userToChangePassword.toString());
         if (userToChangePassword != null) {
             System.out.println("change password to: " + newPassword);

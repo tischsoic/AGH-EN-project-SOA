@@ -20,9 +20,6 @@ public class LoginDao {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory( "entityManager" );
         EntityManager em = emf.createEntityManager();
 
-        Query q = em.createQuery("from Book where id = 1");
-        List<Book> books = q.getResultList();
-        System.out.println(books);
         Query q2 = em.createQuery("from User");
         System.out.println(q2.toString());
         List<User> us = q2.getResultList();

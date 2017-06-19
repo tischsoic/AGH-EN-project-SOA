@@ -22,8 +22,6 @@ public class HelloWorld {
 
     @Context
     private UriInfo context;
-//    private EntityManagerFactory emf;
-//    private EntityManager em;
 
     @GET
     @Produces({MediaType.APPLICATION_JSON})
@@ -33,38 +31,5 @@ public class HelloWorld {
         l.add(t);
 
         return l;
-//        List<Ticket> tickets = parkingMeter.getAllTickets();
-//        List<TicketDTO> ticketDTOS = new LinkedList<TicketDTO>();
-//
-//        for (Ticket t : tickets) {
-//            TicketDTO td = new TicketDTO();
-//            td.parking_meter_id = t.getParkingMeter() != null ? t.getParkingMeter().getParking_meter_id() : null;
-//            td.tic_end = t.getTic_end();
-//            td.tic_start = t.getTic_start();
-//            td.ticket_id = t.getTicket_id();
-//
-//            ticketDTOS.add(td);
-//        }
-//
-//        return ticketDTOS;
-
-//        emf = Persistence.createEntityManagerFactory( "entityManager" );
-//        em = emf.createEntityManager();
-//
-//        String hql = "from Book";
-//        Query query = em.createQuery(hql);
-//        List<Book> books = query.getResultList();
-////        return query.getResultList();
-//        System.out.println(books.size());
-//        System.out.println(books.toString());
-//        em.close();
-//        emf.close();
-//        return books;
-
-//        MyResp mr = new MyResp();
-//        mr.setMsg("asd");
-//        mr.setNumber(12);
-//
-//        return mr;
     }
 }

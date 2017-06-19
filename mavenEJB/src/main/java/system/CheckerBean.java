@@ -26,7 +26,6 @@ public class CheckerBean implements Checker {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!! ParkingSpaceMockSoapBean");
     }
 
     private void manageTicket(Occupancy o) {
@@ -44,10 +43,8 @@ public class CheckerBean implements Checker {
         occupancyZoneIdQuery.setParameter("oId", o.getOccupancy_id());
         occupancyZoneIdQuery.setMaxResults(1);
 
-        System.out.println("!!!!!!!! oId: " + o.getOccupancy_id());
         List<Long> occupancyZoneIds = occupancyZoneIdQuery.getResultList();
         Long occupancyZoneId = occupancyZoneIds.get(0);
-        System.out.println("!!!!!!!!! CheckerBean, occupancyZoneId: " + occupancyZoneId);
 
         String hql = "select t.ticket_id from Ticket t" +
                 " left join t.parkingMeter pm" +
@@ -63,18 +60,15 @@ public class CheckerBean implements Checker {
         List<Long> ticketsIds = query.getResultList();
         Long ticketId = ticketsIds.size() != 0 ? ticketsIds.get(0) : null;
 
-        System.out.println("!!!!!!! CheckerBean, ticketFstId: " + ticketId);
-
-
         if (ticketId != null) {
             Ticket occupancyTicket = new Ticket();
             occupancyTicket.setTicket_id(ticketId);
 
-            Occupancy occupancy = new Occupancy();
-            occupancy.setOccupancy_id(o.getOccupancy_id());
-            occupancy.setTicket(occupancyTicket);
+            o.setTicket(occupancyTicket);
 
-            session.save(occupancy);
+            session.update(o);
+        } else {
+            System.out.println("Bilet nie został zakupiony!");
         }
 
         session.getTransaction().commit();

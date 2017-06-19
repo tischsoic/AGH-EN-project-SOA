@@ -10,23 +10,20 @@
     <h:outputLabel value="Most populat tickets:"/><br/>
     <h:dataTable value="#{raport.mostPopularTickets}" var="ps">
         <h:column>
-            <f:facet name="header">Zone ID</f:facet>
+            <f:facet name="header">Ticket duration</f:facet>
             #{ps[0]}
         </h:column>
         <h:column>
-            <f:facet name="header">Parking space ID</f:facet>
+            <f:facet name="header">Quantity</f:facet>
             #{ps[1]}
-        </h:column>
-        <h:column>
-            <f:facet name="header">Occupied</f:facet>
-            <!--#{ps[2] > 0 ? "occupied" : "not occupied"}-->
         </h:column>
     </h:dataTable>
 
     <br/>
     <h:form>
         <h:commandLink action="change_password" value="Change password" /><br/>
-        <h:commandLink action="#{login.logout}" value="Logout" />
+        <h:commandLink action="#{login.logout}" value="Logout" /><br/>
+        <h:commandLink action="dashboard" value="Dashboard" />
     </h:form>
 </f:view>
 </html>
